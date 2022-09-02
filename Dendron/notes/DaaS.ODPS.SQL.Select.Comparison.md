@@ -1,0 +1,302 @@
+---
+id: ruroxyz3wytor87p9940vel
+title: Comparison
+desc: ''
+updated: 1661483373980
+created: 1661482485277
+---
+
+[ref.](https://www.alibabacloud.com/help/en/maxcompute/latest/mappings-between-built-in-functions-of-maxcompute-and-built-in-functions-of-hive-mysql-and-oracle)
+
+## Index:
+
+1. [[Date Functions |#^date]]
+
+1. [[Math Functions |#^math]]
+
+1. [[Window Functions |#^window]]
+
+1. [[Aggregate Functions |#^aggregate]]
+
+1. [[STRING Functions |#^string]]
+
+1. [[Other Functions |#^other]]
+
+1. [[Complex Functions |#^complex]]
+
+## [[Date Functions|DaaS.ODPS.SQL.Select.Date]]^date
+MaxCompute  | Hive  | MySQL  | Oracle
+------------|-------|--------|-------
+DATEADD  | N/A  | N/A  | N/A
+DATE_ADD  | DATE_ADD  | DATE_ADD  | N/A
+DATE_SUB  | DATE_SUB  | DATE_SUB  | N/A
+DATEDIFF  | DATEDIFF  | DATEDIFF  | MONTHS_BETWEEN
+DATEPART  | N/A  | DATE_FORMAT  | EXTRACT (DATETIME)
+DATETRUNC  | TRUNC  | DATE_FORMAT  | EXTRACT (DATETIME)
+FROM_UNIXTIME  | FROM_UNIXTIME  | FROM_UNIXTIME  | N/A
+GETDATE  | CURRENT_DATE  | NOW  | CURRENT_DATE
+ISDATE  | N/A  | STR_TO_DATE (The return value FALSE indicates that a string cannot be converted into a date value.)  | N/A
+LASTDAY  | LAST_DAY  | LAST_DAY  | LAST_DAY
+TO_DATE  | TO_DATE  | STR_TO_DATE  | DATE
+TO_CHAR  | N/A  | DATE_FORMAT  | TO_CHAR (DATETIME)
+UNIX_TIMESTAMP  | UNIX_TIMESTAMP  | UNIX_TIMESTAMP  | N/A
+WEEKDAY  | N/A  | WEEKDAY  | N/A
+WEEKOFYEAR  | WEEKOFYEAR  | WEEKOFYEAR  | N/A
+ADD_MONTHS  | ADD_MONTHS  | ADDDATE  | ADD_MONTHS
+CURRENT_TIMESTAMP  | CURRENT_TIMESTAMP  | CURRENT_TIMESTAMP  | CURRENT_TIMESTAMP
+DAY  | DAY  | DAY  | DAY
+DAYOFMONTH  | DAYOFMONTH  | DAYOFMONTH  | N/A
+EXTRACT  | EXTRACT  | EXTRACT  | EXTRACT
+FROM_UTC_TIMESTAMP  | FROM_UTC_TIMESTAMP  | N/A  | N/A
+HOUR  | HOUR  | HOUR  | HOUR
+LAST_DAY  | LAST_DAY  | LAST_DAY  | N/A
+MINUTE  | MINUTE  | MINUTE  | MINUTE
+MONTH  | MONTH  | MONTH  | MONTH
+MONTHS_BETWEEN  | MONTHS_BETWEEN  | TIMESTAMPDIFF  | MONTHS_BETWEEN
+NEXT_DAY  | NEXT_DAY  | N/A  | NEXT_DAY
+QUARTER  | QUARTER  | QUARTER  | QUARTER
+SECOND  | SECOND  | SECOND  | N/A
+TO_MILLIS  | N/A  | N/A  | N/A
+YEAR  | YEAR  | YEAR  | N/A
+
+## [[Math Functions|DaaS.ODPS.SQL.Select.Math]]^math
+
+MaxCompute  | Hive  | MySQL  | Oracle
+------------|-------|--------|-------
+ABS  | ABS  | ABS  | ABS
+ACOS  | ACOS  | ACOS  | ACOS
+ASIN  | ASIN  | ASIN  | ASIN
+ATAN  | ATAN  | ATAN  | ATAN
+CEIL  | CEIL  | CEIL  | CEIL
+CONV  | CONV  | CONV  | N/A
+COS  | COS  | COS  | COS
+COSH  | COSH  | N/A  | COSH
+COT  | COT  | COT  | COT
+EXP  | EXP  | EXP  | EXP
+FLOOR  | FLOOR  | FLOOR  | FLOOR
+LN  | LN  | LN  | LN
+LOG  | LOG  | LOG  | LOG
+POW  | POW  | POW  | POWER
+RAND  | RAND  | RAND  | N/A
+ROUND  | ROUND  | ROUND  | ROUND
+SIN  | SIN  | SIN  | SIN
+SINH  | SINH  | N/A  | SINH
+SQRT  | SQRT  | SQRT  | SQRT
+TAN  | TAN  | TAN  | TAN
+TANH  | TANH  | N/A  | TANH
+TRUNC  | TRUNC  | TRUNCATE  | TRUNC
+BIN  | BIN  | BIN  | BITAND
+CBRT  | CBRT  | N/A  | N/A
+CORR  | CORR  | CORR  | CORR
+DEGREES  | DEGREES  | DEGREES  | DEGREES
+E  | E  | N/A  | N/A
+FACTORIAL  | FACTORIAL  | N/A  | N/A
+FORMAT_NUMBER  | FORMAT_NUMBER  | FORMAT  | N/A
+HEX  | HEX  | HEX  | RAWTOHEX
+LOG2  | LOG2  | LOG2  | LOG
+LOG10  | LOG10  | LOG10  | LOG
+PI  | PI  | PI  | PI
+RADIANS  | RADIANS  | RADIANS  | RADIANS
+SIGN  | SIGN  | SIGN  | SIGN
+SHIFTLEFT  | SHIFTLEFT  | <<  | N/A
+SHIFTRIGHT  | SHIFTRIGHT  | >>  | N/A
+SHIFTRIGHTUNSIGNED  | SHIFTRIGHTUNSIGNED  | >>>  | N/A
+UNHEX  | UNHEX  | UNHEX  | HEXTORAW
+WIDTH_BUCKET  | WIDTH_BUCKET  | N/A  | WIDTH_BUCKET
+
+## [[Window Functions|DaaS.ODPS.SQL.Select.Window]]^window
+
+MaxCompute  | Hive  | MySQL  | Oracle
+------------|-------|--------|-------
+COUNT  | COUNT  | COUNT  | COUNT
+AVG  | AVG  | AVG  | AVG
+MAX  | MAX  | MAX  | MAX
+MIN  | MIN  | MIN  | MIN
+MEDIAN  | N/A  | N/A  | MEDIAN
+STDDEV  | N/A  | STDDEV  | STDDEV
+STDDEV_SAMP  | N/A  | STDDEV_SAMP  | STDDEV_SAMP
+SUM  | SUM  | SUM  | SUM
+DENSE_RANK  | DENSE_RANK  | DENSE_RANK  | DENSE_RANK
+RANK  | RANK  | RANK  | RANK
+LAG  | LAG  | LAG  | LAG
+LEAD  | LEAD  | LEAD  | LEAD
+PERCENT_RANK  | PERCENT_RANK  | PERCENT_RANK  | PERCENT_RANK
+ROW_NUMBER  | ROW_NUMBER  | ROW_NUMBER  | ROW_NUMBER
+CLUSTER_SAMPLE  | N/A  | N/A  | N/A
+CUME_DIST  | CUME_DIST  | CUME_DIST  | CUME_DIST
+NTILE  | NTILE  | NTILE  | NTILE
+
+## [[Aggregate Functions|DaaS.ODPS.SQL.Select.Aggregate]]^aggregate
+
+MaxCompute  | Hive  | MySQL  | Oracle
+------------|-------|--------|-------
+AVG  | AVG  | AVG  | AVG
+COUNT  | COUNT  | COUNT  | COUNT
+COUNT_IF  | N/A  | N/A  | N/A
+MAX  | MAX  | MAX  | MAX
+MIN  | MIN  | MIN  | MIN
+MEDIAN  | N/A  | N/A  | MEDIAN
+STDDEV  | STDDEV  | STDDEV  | STDDEV
+STDDEV_SAMP  | STDDEV_SAMP  | STDDEV_SAMP  | STDDEV_SAMP
+SUM  | SUM  | SUM  | SUM
+WM_CONCAT  | N/A  | GROUP_CONCAT  | WM_CONCAT
+ANY_VALUE  | N/A  | N/A  | N/A
+APPROX_DISTINCT  | N/A  | N/A  | N/A
+ARG_MAX  | N/A  | N/A  | N/A
+ARG_MIN  | N/A  | N/A  | N/A
+COLLECT_LIST  | COLLECT LIST  | N/A  | COLLECT
+COLLECT_SET  | COLLECT SET  | N/A  | COLLECT
+COVAR_POP  | COVAR_POP  | N/A  | COVAR_POP
+COVAR_SAMP  | COVAR_SAMP  | N/A  | COVAR_SAMP
+NUMERIC_HISTOGRAM  | NUMERIC_HISTOGRAM  | N/A  | N/A
+PERCENTILE  | PERCENTILE  | N/A  | N/A
+PERCENTILE_APPROX  | PERCENTILE_APPROX  | N/A  | N/A
+VARIANCE/VAR_POP  | VARIANCE/VAR_POP  | VAR_POP  | VARIANCE/VAR_POP
+VAR_SAMP  | VAR_SAMP  | VAR_SAMP  | VAR_SAMP
+
+## [[STRING Functions|DaaS.ODPS.SQL.Select.STRING]]^string
+
+MaxCompute  | Hive  | MySQL  | Oracle
+------------|-------|--------|-------
+ASCII  | ASCII  | ASCII  | ASCII
+CHAR_MATCHCOUNT  | N/A  | N/A  | N/A
+CHR  | CHR  | CHAR  | CHR
+CONCAT  | CONCAT  | CONCAT  | CONCAT
+ENCODE  | ENCODE  | N/A  | N/A
+FIND_IN_SET  | FIND_IN_SET  | FIND_IN_SET  | N/A
+FORMAT_NUMBER  | FORMAT_NUMBER  | FORMAT  | N/A
+FROM_JSON  | N/A  | N/A  | N/A
+GET_JSON_OBJECT  | GET_JSON_OBJECT  | JSON_EXTRACT  | N/A
+INSTR  | INSTR  | INSTR  | INSTR
+IS_ENCODING  | N/A  | N/A  | N/A
+KEYVALUE  | N/A  | N/A  | N/A
+LENGTH  | LENGTH  | LENGTH  | LENGTH
+LENGTHB  | LENGTHB  | LENGTHB  | LENGTHB
+LOCATE  | LOCATE  | LOCATE  | N/A
+LTRIM  | LTRIM  | LTRIM  | LTRIM
+MD5  | MD5  | MD5  | N/A
+PARSE_URL  | PARSE_URL  | N/A  | N/A
+PARSE_URL_TUPLE  | PARSE_URL_TUPLE  | N/A  | N/A
+REGEXP_COUNT  | N/A  | N/A  | REGEXP_COUNT
+REGEXP_EXTRACT  | REGEXP_EXTRACT  | N/A  | N/A
+REGEXP_INSTR  | N/A  | REGEXP_INSTR  | REGEXP_INSTR
+REGEXP_REPLACE  | REGEXP_REPLACE  | REGEXP_REPLACE  | REGEXP_REPLACE
+REGEXP_SUBSTR  | N/A  | REGEXP_SUBSTR  | REGEXP_SUBSTR
+REPEAT  | REPEAT  | REPEAT  | REPEAT
+REVERSE  | REVERSE  | REVERSE  | REVERSE
+RTRIM  | RTRIM  | RTRIM  | RTRIM
+SPACE  | SPACE  | SPACE  | SPACE
+SPLIT_PART  | N/A  | N/A  | N/A
+SUBSTR  | SUBSTR  | SUBSTR  | SUBSTR
+SUBSTRING  | SUBSTRING  | SUBSTRING  | SUBSTR
+TO_CHAR  | N/A  | N/A  | N/A
+TO_JSON  | N/A  | N/A  | N/A
+TOLOWER  | LOWER  | LOWER  | LOWER
+TOUPPER  | UPPER  | UPPER  | UPPER
+TRIM  | TRIM  | TRIM  | TRIM
+URL_DECODE  | N/A  | N/A  | N/A
+URL_ENCODE  | N/A  | N/A  | PERCENTILE_CONT
+CONCAT_WS  | CONCAT_WS  | CONCAT_WS  | N/A
+JSON_TUPLE  | JSON_TUPLE  | N/A  | N/A
+LPAD  | LPAD  | LPAD  | LPAD
+RPAD  | RPAD  | RPAD  | RPAD
+REPLACE  | REPLACE  | REPLACE  | REPLACE
+SOUNDEX  | SOUNDEX  | SOUNDEX  | SOUNDEX
+SUBSTRING_INDEX  | SUBSTRING_INDEX  | SUBSTRING_INDEX  | N/A
+TRANSLATE  | TRANSLATE  | N/A  | TRANSLATE
+
+## [[Other Functions|DaaS.ODPS.SQL.Select.Other]]^other
+
+MaxCompute  | Hive  | MySQL  | Oracle
+------------|-------|--------|-------
+BASE64  | BASE64  | TO_BASE64  | UTL_ENCODE.BASE64_ENCODE
+BETWEEN AND expression  | BETWEEN AND  | BETWEEN AND  | BETWEEN AND
+CASE WHEN expression  | CASE WHEN  | CASE WHEN  | CASE WHEN
+CAST  | CAST  | CAST  | CAST
+COALESCE  | COALESCE  | COALESCE  | COALESCE
+COMPRESS  | N/A  | COMPRESS  | UTL_COMPRESS.LZ_COMPRESS
+CRC32  | CRC32  | CRC32  | N/A
+DECODE  | DECODE  | N/A  | DECODE
+DECOMPRESS  | N/A  | UNCOMPRESS  | UTL_COMPRESS.LZ_UNCOMPRESS
+GET_IDCARD_AGE  | N/A  | N/A  | N/A
+GET_IDCARD_BIRTHDAY  | N/A  | N/A  | N/A
+GET_IDCARD_SEX  | N/A  | N/A  | N/A
+GET_USER_ID  | CURRENT_USER  | CURRENT_USER  | UID
+GREATEST  | GREATEST  | GREATEST  | N/A
+HASH  | HASH  | N/A  | ORA_HASH
+IF  | IF  | IF  | IF
+LEAST  | LEAST  | LEAST  | LEAST
+MAX_PT  | N/A  | N/A  | N/A
+NULLIF  | NULLIF  | NULLIF  | NULLIF
+NVL  | NVL  | IFNULL  | N/A
+ORDINAL  | N/A  | N/A  | N/A
+PARTITION_EXISTS  | N/A  | N/A  | N/A
+SAMPLE  | N/A  | N/A  | N/A
+SHA  | SHA  | SHA  | N/A
+SHA1  | SHA1  | SHA1  | N/A
+SHA2  | SHA2  | SHA2  | N/A
+SIGN  | SIGN  | SIGN  | SIGN
+SPLIT  | SPLIT  | SPLIT  | N/A
+STACK  | STACK  | N/A  | N/A
+STR_TO_MAP  | STR_TO_MAP  | N/A  | N/A
+TABLE_EXISTS  | N/A  | N/A  | N/A
+TRANS_ARRAY  | N/A  | N/A  | N/A
+TRANS_COLS  | N/A  | N/A  | N/A
+UNBASE64  | UNBASE64  | FROM_BASE64  | UTL_ENCODE.BASE64_DECODE
+UNIQUE_ID  | N/A  | N/A  | N/A
+UUID  | N/A  | UUID  | UID
+
+## [[Complex Functions|DaaS.ODPS.SQL.Select.Complex]]^complex
+
+Function type  | MaxCompute  | Hive  | MySQL  | Oracle
+---------------|-------------|-------|--------|-------
+ARRAY  | ALL_MATCH  | N/A  | N/A  | N/A
+ARRAY  | ANY_MATCH  | N/A  | N/A  | N/A
+ARRAY  | ARRAY  | ARRAY  | N/A  | N/A
+ARRAY  | ARRAY_CONTAINS  | ARRAY_CONTAINS  | N/A  | N/A
+ARRAY  | ARRAY_DISTINCT  | N/A  | N/A  | N/A
+ARRAY  | ARRAY_EXCEPT  | N/A  | N/A  | N/A
+ARRAY  | ARRAY_INTERSECT  | N/A  | N/A  | N/A
+ARRAY  | ARRAY_JOIN  | N/A  | N/A  | N/A
+ARRAY  | ARRAY_MAX  | N/A  | N/A  | N/A
+ARRAY  | ARRAY_MIN  | N/A  | N/A  | N/A
+ARRAY  | ARRAY_POSITION  | N/A  | N/A  | N/A
+ARRAY  | ARRAY_REMOVE  | N/A  | N/A  | N/A
+ARRAY  | ARRAY_REDUCE  | N/A  | N/A  | N/A
+ARRAY  | ARRAY_REPEAT  | N/A  | N/A  | N/A
+ARRAY  | ARRAY_SORT  | N/A  | N/A  | N/A
+ARRAY  | ARRAY_UNION  | N/A  | N/A  | N/A
+ARRAY  | ARRAYS_OVERLAP  | N/A  | N/A  | N/A
+ARRAY  | ARRAYS_ZIP  | N/A  | N/A  | N/A
+ARRAY  | CONCAT  | CONCAT  | N/A  | N/A
+ARRAY  | EXPLODE  | EXPLODE  | N/A  | N/A
+ARRAY  | FILTER  | N/A  | N/A  | N/A
+ARRAY  | INDEX  | [] operator  | N/A  | N/A
+ARRAY  | POSEXPLODE  | POSEXPLODE  | N/A  | N/A
+ARRAY  | SIZE  | SIZE  | N/A  | N/A
+ARRAY  | SLICE  | N/A  | N/A  | N/A
+ARRAY  | SORT_ARRAY  | SORT_ARRAY  | N/A  | N/A
+ARRAY  | TRANSFORM  | N/A  | N/A  | N/A
+ARRAY  | ZIP_WITH  | N/A  | N/A  | N/A
+MAP  | EXPLODE  | EXPLODE  | N/A  | N/A
+MAP  | INDEX  | [] operator  | N/A  | N/A
+MAP  | MAP  | MAP  | N/A  | N/A
+MAP  | MAP_CONCAT  | N/A  | N/A  | N/A
+MAP  | MAP_ENTRIES  | N/A  | N/A  | N/A
+MAP  | MAP_FILTER  | N/A  | N/A  | N/A
+MAP  | MAP_FROM_ARRAYS  | N/A  | N/A  | N/A
+MAP  | MAP_FROM_ENTRIES  | N/A  | N/A  | N/A
+MAP  | MAP_KEYS  | MAP_KEYS  | N/A  | N/A
+MAP  | MAP_VALUES  | MAP_VALUES  | N/A  | N/A
+MAP  | MAP_ZIP_WITH  | N/A  | N/A  | N/A
+MAP  | SIZE  | SIZE  | N/A  | N/A
+MAP  | TRANSFORM_KEYS  | N/A  | N/A  | N/A
+MAP  | TRANSFORM_VALUES  | N/A  | N/A  | N/A
+STRUCT  | FIELD  | . operator  | N/A  | N/A
+STRUCT  | INLINE  | INLINE  | N/A  | N/A
+STRUCT  | STRUCT  | STRUCT  | N/A  | N/A
+STRUCT  | NAMED_STRUCT  | N/A  | N/A  | N/A
+JSON  | FROM_JSON  | N/A  | N/A  | N/A
+JSON | GET_JSON_OBJECT  | GET_JSON_OBJECT  | JSON_EXTRACT  | N/A
+JSON | JSON_TUPLE  | JSON_TUPLE  | N/A  | N/A
+JSON | TO_JSON  | N/A  | N/A  | N/A
